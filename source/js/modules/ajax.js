@@ -3,11 +3,13 @@ function sendRequest(method, url, body = null) {
     'Content-Type': 'application/json'
   }
 
-  return fetch(url, {
+  const options = body ? {
     method: method,
     body: JSON.stringify(body),
     headers: headers
-  }).then(response => {
+  } : null;
+
+  return fetch(url, options).then(response => {
     if (response.ok) {
       return response.json();
     }
@@ -15,8 +17,8 @@ function sendRequest(method, url, body = null) {
       const e = new Error('ошибка');
       e.data = error;
       throw e;
-    })
-  })
+    });
+  });
 }
 
 export {

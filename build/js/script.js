@@ -175,7 +175,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sendRequest\", function() { return sendRequest; });\nfunction sendRequest(method, url) {\n  var body = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;\n  var headers = {\n    'Content-Type': 'application/json'\n  };\n  return fetch(url, {\n    method: method,\n    body: JSON.stringify(body),\n    headers: headers\n  }).then(function (response) {\n    if (response.ok) {\n      return response.json();\n    }\n\n    return response.json().then(function (error) {\n      var e = new Error('ошибка');\n      e.data = error;\n      throw e;\n    });\n  });\n}\n\n\n\n//# sourceURL=webpack:///./source/js/modules/ajax.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sendRequest\", function() { return sendRequest; });\nfunction sendRequest(method, url) {\n  var body = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;\n  var headers = {\n    'Content-Type': 'application/json'\n  };\n  var options = body ? {\n    method: method,\n    body: JSON.stringify(body),\n    headers: headers\n  } : null;\n  return fetch(url, options).then(function (response) {\n    if (response.ok) {\n      return response.json();\n    }\n\n    return response.json().then(function (error) {\n      var e = new Error('ошибка');\n      e.data = error;\n      throw e;\n    });\n  });\n}\n\n\n\n//# sourceURL=webpack:///./source/js/modules/ajax.js?");
 
 /***/ }),
 
