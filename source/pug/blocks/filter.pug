@@ -1,0 +1,62 @@
+.col-3_md-12
+  .filter
+    .filter__collapsed
+      span.filter__label Фильтры
+        button.filter__toggler.filter__toggler--collapsed(type="button")
+          span.filter__toggler-text-open.filter__toggler-text-open--collapsed Развернуть
+          span.filter__toggler-text-close.filter__toggler-text-close--collapsed Свернуть
+          span.filter__toggler-icon.filter__toggler-icon--collapsed
+            <svg width="9" height="6" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.5 4L10 1" stroke-width="1.5"/></svg>
+    .filter__content
+      .filter__block.filter__block--opened
+        .filter__visible-part
+          span.filter__label Цена
+          button.filter__toggler(type="button")
+            span.filter__toggler-text-open Развернуть
+            span.filter__toggler-text-close Свернуть
+            span.filter__toggler-icon
+              <svg width="9" height="6" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.5 4L10 1" stroke-width="1.5"/></svg>
+        .filter__hidden-part
+          .filter__range
+          .filter__range-inputs
+            input(type="text" name="price_from")
+            input(type="text" name="price_to")
+      .filter__block.filter__block--opened
+        .filter__visible-part
+          span.filter__label Бренд
+          button.filter__toggler(type="button")
+            span.filter__toggler-text-open Развернуть
+            span.filter__toggler-text-close Свернуть
+            span.filter__toggler-icon
+              <svg width="9" height="6" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.5 4L10 1" stroke-width="1.5"/></svg>
+        .filter__hidden-part
+          .checkbox.checkbox--filter
+            label
+              input(type="checkbox" name="Alpen Gold")
+              span Alpen Gold (2)
+          .checkbox.checkbox--filter
+            label
+              input(type="checkbox" name="Casa Dolcini")
+              span Casa Dolcini (1)
+          .checkbox.checkbox--filter
+            label
+              input(type="checkbox" name="Santa Maria")
+              span Santa Maria (2)
+      .filter__block.filter__block--opened
+        .filter__visible-part
+          span.filter__label Особенность
+          button.filter__toggler(type="button")
+            span.filter__toggler-text-open Развернуть
+            span.filter__toggler-text-close Свернуть
+            span.filter__toggler-icon
+              <svg width="9" height="6" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.5 4L10 1" stroke-width="1.5"/></svg>
+        .filter__hidden-part
+          .checkbox.checkbox--filter
+            label
+              input(type="checkbox" name="С арахисом")
+              span С арахисом
+          .checkbox.checkbox--filter
+            label
+              input(type="checkbox" name="Без сахара")
+              span Без сахара
+  button(type="button").filter__reset-btn Сбросить

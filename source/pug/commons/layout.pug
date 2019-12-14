@@ -1,0 +1,12 @@
+include mixins.pug
+
+block variables
+
+doctype html
+html(lang="ru")
+  include head.pug
+  body
+    include ../blocks/header.pug
+    block content
+
+    include scripts.pug

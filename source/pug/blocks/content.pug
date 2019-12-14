@@ -1,0 +1,49 @@
+.page
+  .page__header
+    .page__logo
+      img(src="img/logo.png", srcset="img/logo@2x.png 2x", alt="logo")
+    include user-nav.pug
+  .page__menu-wrapper
+    .page__menu
+      .menu
+        button.menu__btn(aria-label="меню")
+          span
+        span.menu__label Каталог товаров
+      .search
+        form(action="#")
+          +icon-sprite("search-icon", 22, 23)
+          input(type='search' name="search" placeholder="Что вы хотите найти?")
+          button.search__submit(type="submit") Найти
+  .page__container
+    include breadcrumbs.pug
+    h2.page__title Новинки продуктов
+    .grid.content
+      include filter.pug
+      .col-9_md-12
+        .catalog-sort
+          include sort.pug
+          .grid.catalog
+            .col-4_lg-6_sm-12
+              +card("item_1", "Копченая паприка Santa Maria, 230г", "643 р.", "449 р.")
+            .col-4_lg-6_sm-12
+              +card("item_2", "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г", "", "149 р.")
+            .col-4_lg-6_sm-12
+              +card("item_3", "Печенье бисквитное Casa Dolcini Lady Fingers, 200г", "", "213 р.")
+            .col-4_lg-6_sm-12
+              +card("item_4", "Шоколад молочный Alpen Gold Max Fun, 160г", "147 р.", "120 р.")
+            .col-4_lg-6_sm-12
+              +card("item_5", "Шоколад молочный Alpen Gold Max Fun, 160г", "", "147 р.")
+            .col-4_lg-6_sm-12
+              +card("item_6", "Прованские травы Santa Maria, 6г", "", "39 р.")
+      include pagination.pug
+      .content__sort-select
+          span Сортировать по
+          select(id="sort_items_method_bottom")
+            option популярности
+            option названию А-Я
+            option названию Я-А
+            option возрастанию цены
+            option убыванию цены
+      .modal.modal--basket
+        button(type="button", aria-label="закрыть").modal__close Х
+        p.modal__text

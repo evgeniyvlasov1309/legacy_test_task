@@ -1,0 +1,18 @@
+mixin icon-sprite(name, width, height)
+  svg(width=width height=height)
+    use(xlink:href="img/sprite_auto.svg#" + name)
+mixin card(image, name, oldprice, newprice)
+  .card
+    .card__image
+      img(src=`img/${image}.jpg`, srcset=`img/${image}@2x.jpg 2x`, alt=`${name}`)
+    h3.card__title #{name}
+    .card__price
+      if oldprice !== ''
+        .card__old-price #{oldprice}
+      .card__new-price #{newprice}
+    .card__controls
+      .card__amount-input
+        button.card__amount-btn.card__amount-btn--decrease(type="button") -
+        input(type="text" name="количество" value="1")
+        button.card__amount-btn.card__amount-btn--increase(type="button") +
+      button.card__basket-btn(type="button") В корзину

@@ -1,0 +1,101 @@
+.user-nav {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @media (max-width: 1024px) {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+  }
+
+  @media (max-width: 767px) {
+    top: 12px;
+    right: 10px;
+  }
+}
+
+.user-nav li:not(:last-child) {
+  margin-right: 30px;
+
+  @media (max-width: 1024px) {
+    margin-right: 8px;
+  }
+}
+
+.user-nav__link {
+  display: flex;
+  align-items: center;
+  max-width: 138px;
+  width: 100%;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+  text-decoration: none;
+
+  @media (max-width: 1024px) {
+    width: 28px;
+    height: 28px;
+    display: block;
+  }
+}
+
+.user-nav__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 52px;
+  width: 100%;
+  height: 52px;
+  border-radius: 50%;
+  background: #ECECEC;
+  margin-right: 13px;
+
+  @media (max-width: 1024px) {
+    height: 100%;
+  }
+}
+
+.user-nav__text {
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.user-nav__item {
+
+  &--faq {
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &--basket {
+    @media (max-width: 1024px) {
+      svg {
+        width: 14px;
+        height: 16px;
+      }
+    }
+  }
+
+  &--login {
+    @media (max-width: 1024px) {
+      svg {
+        width: 16px;
+        height: 14px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+}

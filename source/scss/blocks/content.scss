@@ -1,0 +1,52 @@
+.content {
+  position: relative;
+  margin: 0;
+  border-top: 1px solid #C4C4C4;
+  padding-top: 22px;
+  border-bottom: 1px solid #C4C4C4;
+
+  @media (max-width: 1024px) {
+    padding-top: 25px;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 18px;
+    border-bottom: none;
+  }
+}
+
+.content > div:first-child {
+  padding-right: 15px;
+  padding-left: 0;
+
+  @media (max-width: 1024px) {
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+}
+
+.content > div:nth-child(2) {
+  padding: 0;
+  padding-left: 30px;
+  margin-bottom: 83px;
+
+  @media (max-width: 1024px) {
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+}
+
+.content__sort-select {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  line-height: 15px;
+  bottom: 34px;
+  right: 0;
+
+  @media (max-width: 1280px) {
+    display: none;
+  }
+}

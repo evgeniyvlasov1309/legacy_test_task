@@ -1,0 +1,32 @@
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  margin-bottom: 30px;
+
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 15px;
+  }
+}
+
+.breadcrumbs__link {
+  font-size: 13px;
+  line-height: 15px;
+
+  color: #C4C4C4;
+  text-decoration: none;
+  margin-right: 23px;
+}
+
+li:last-child .breadcrumbs__link {
+  margin-right: 0;
+}
+
+.breadcrumbs__link--current {
+  color: #606060;
+}

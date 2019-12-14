@@ -1,0 +1,85 @@
+.page__container {
+  max-width: 1502px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 36px 31px 68px 31px;
+  background-color: #fff;
+
+  @media (max-width: 1024px) {
+    padding: 23px 40px 68px 40px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 18px 10px 68px 10px;
+  }
+}
+
+.page__header {
+  max-width: 1502px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 28px 31px 25px 29px;
+
+  @media (max-width: 1024px) {
+    position: relative;
+    justify-content: center;
+    padding: 20px 40px 9px 40px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 10px 10px 8px 10px;
+  }
+}
+
+.page__menu-wrapper {
+  background: #ECECEC;
+}
+
+.page__menu {
+  max-width: 1502px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+
+  @media (max-width: 1024px) {
+    padding: 10px 40px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 8px 10px;
+  }
+}
+
+.page__title {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 12px;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+
+.page__logo {
+  @media (max-width: 1024px) {
+    max-width: 122px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 98px;
+  }
+}

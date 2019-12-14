@@ -1,0 +1,19 @@
+.catalog-sort {
+
+  @media (max-width: 1024px) {
+    padding-bottom: 39px;
+  }
+
+  @media (max-width: 767px) {
+    padding-bottom: 6px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #C4C4C4;
+  }
+}
+
+@media (width: 768px) {
+  [class~=grid]>[class*=_sm-12] {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
