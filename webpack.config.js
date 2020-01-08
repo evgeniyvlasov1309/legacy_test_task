@@ -29,8 +29,7 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-        noUiSlider: 'nouislider',
-        customSelect: 'custom-select'
+        noUiSlider: 'nouislider'
     })
   ]
 };

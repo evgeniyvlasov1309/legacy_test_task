@@ -1,124 +1,468 @@
 {
+  "items": [
+    {
+      "id": 1,
+      "image": "img/item_1.jpg",
+      "name": "Копченая паприка Santa Maria, 230г",
+      "old_price": "643",
+      "new_price": "449",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 2,
+      "image": "img/item_2.jpg",
+      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
+      "old_price": "",
+      "new_price": "149",
+      "brand": "",
+      "features": ""
+    },
+    {
+      "id": 3,
+      "image": "img/item_3.jpg",
+      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
+      "old_price": "",
+      "new_price": "213",
+      "brand": "Casa Dolcini",
+      "features": ""
+    },
+    {
+      "id": 4,
+      "image": "img/item_4.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "147",
+      "new_price": "120",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 5,
+      "image": "img/item_5.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "",
+      "new_price": "147",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 6,
+      "image": "img/item_6.jpg",
+      "name": "Прованские травы Santa Maria, 6г",
+      "old_price": "",
+      "new_price": "39",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 7,
+      "image": "img/item_1.jpg",
+      "name": "Копченая паприка Santa Maria, 230г",
+      "old_price": "643",
+      "new_price": "487",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 8,
+      "image": "img/item_2.jpg",
+      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
+      "old_price": "",
+      "new_price": "149",
+      "brand": "",
+      "features": ""
+    },
+    {
+      "id": 9,
+      "image": "img/item_3.jpg",
+      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
+      "old_price": "",
+      "new_price": "213",
+      "brand": "Casa Dolcini",
+      "features": ""
+    },
+    {
+      "id": 10,
+      "image": "img/item_4.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "147",
+      "new_price": "120",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 11,
+      "image": "img/item_5.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "",
+      "new_price": "147",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 12,
+      "image": "img/item_6.jpg",
+      "name": "Прованские травы Santa Maria, 6г",
+      "old_price": "",
+      "new_price": "39",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 13,
+      "image": "img/item_1.jpg",
+      "name": "Копченая паприка Santa Maria, 230г",
+      "old_price": "643",
+      "new_price": "449",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 14,
+      "image": "img/item_2.jpg",
+      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
+      "old_price": "",
+      "new_price": "149",
+      "brand": "",
+      "features": ""
+    },
+    {
+      "id": 15,
+      "image": "img/item_3.jpg",
+      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
+      "old_price": "",
+      "new_price": "213",
+      "brand": "Casa Dolcini",
+      "features": ""
+    },
+    {
+      "id": 16,
+      "image": "img/item_4.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "147",
+      "new_price": "120",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 17,
+      "image": "img/item_5.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "",
+      "new_price": "147",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 18,
+      "image": "img/item_6.jpg",
+      "name": "Прованские травы Santa Maria, 6г",
+      "old_price": "",
+      "new_price": "39",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 19,
+      "image": "img/item_1.jpg",
+      "name": "Копченая паприка Santa Maria, 230г",
+      "old_price": "643",
+      "new_price": "449",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 20,
+      "image": "img/item_2.jpg",
+      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
+      "old_price": "",
+      "new_price": "149",
+      "brand": "",
+      "features": ""
+    },
+    {
+      "id": 21,
+      "image": "img/item_3.jpg",
+      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
+      "old_price": "",
+      "new_price": "213",
+      "brand": "Casa Dolcini",
+      "features": ""
+    },
+    {
+      "id": 22,
+      "image": "img/item_4.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "147",
+      "new_price": "120",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 23,
+      "image": "img/item_5.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "",
+      "new_price": "147",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 24,
+      "image": "img/item_6.jpg",
+      "name": "Прованские травы Santa Maria, 6г",
+      "old_price": "",
+      "new_price": "39",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 25,
+      "image": "img/item_1.jpg",
+      "name": "Копченая паприка Santa Maria, 230г",
+      "old_price": "643",
+      "new_price": "449",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 26,
+      "image": "img/item_2.jpg",
+      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
+      "old_price": "",
+      "new_price": "149",
+      "brand": "",
+      "features": ""
+    },
+    {
+      "id": 27,
+      "image": "img/item_3.jpg",
+      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
+      "old_price": "",
+      "new_price": "213",
+      "brand": "Casa Dolcini",
+      "features": ""
+    },
+    {
+      "id": 28,
+      "image": "img/item_4.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "147",
+      "new_price": "120",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 29,
+      "image": "img/item_5.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "",
+      "new_price": "147",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 30,
+      "image": "img/item_6.jpg",
+      "name": "Прованские травы Santa Maria, 6г",
+      "old_price": "",
+      "new_price": "39",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 31,
+      "image": "img/item_1.jpg",
+      "name": "Копченая паприка Santa Maria, 230г",
+      "old_price": "643",
+      "new_price": "449",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 32,
+      "image": "img/item_2.jpg",
+      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
+      "old_price": "",
+      "new_price": "149",
+      "brand": "",
+      "features": ""
+    },
+    {
+      "id": 33,
+      "image": "img/item_3.jpg",
+      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
+      "old_price": "",
+      "new_price": "213",
+      "brand": "Casa Dolcini",
+      "features": ""
+    },
+    {
+      "id": 34,
+      "image": "img/item_4.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "147",
+      "new_price": "120",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 35,
+      "image": "img/item_5.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "",
+      "new_price": "147",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 36,
+      "image": "img/item_6.jpg",
+      "name": "Прованские травы Santa Maria, 6г",
+      "old_price": "",
+      "new_price": "39",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 37,
+      "image": "img/item_1.jpg",
+      "name": "Копченая паприка Santa Maria, 230г",
+      "old_price": "643",
+      "new_price": "449",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 38,
+      "image": "img/item_2.jpg",
+      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
+      "old_price": "",
+      "new_price": "149",
+      "brand": "",
+      "features": ""
+    },
+    {
+      "id": 39,
+      "image": "img/item_3.jpg",
+      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
+      "old_price": "",
+      "new_price": "213",
+      "brand": "Casa Dolcini",
+      "features": ""
+    },
+    {
+      "id": 40,
+      "image": "img/item_4.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "147",
+      "new_price": "120",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 41,
+      "image": "img/item_5.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "",
+      "new_price": "147",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 42,
+      "image": "img/item_6.jpg",
+      "name": "Прованские травы Santa Maria, 6г",
+      "old_price": "",
+      "new_price": "39",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 43,
+      "image": "img/item_1.jpg",
+      "name": "Копченая паприка Santa Maria, 230г",
+      "old_price": "643",
+      "new_price": "449",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    },
+    {
+      "id": 44,
+      "image": "img/item_2.jpg",
+      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
+      "old_price": "",
+      "new_price": "149",
+      "brand": "",
+      "features": ""
+    },
+    {
+      "id": 45,
+      "image": "img/item_3.jpg",
+      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
+      "old_price": "",
+      "new_price": "213",
+      "brand": "Casa Dolcini",
+      "features": ""
+    },
+    {
+      "id": 46,
+      "image": "img/item_4.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "147",
+      "new_price": "120",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 47,
+      "image": "img/item_5.jpg",
+      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
+      "old_price": "",
+      "new_price": "147",
+      "brand": "Alpen Gold",
+      "features": "С арахисом"
+    },
+    {
+      "id": 48,
+      "image": "img/item_6.jpg",
+      "name": "Прованские травы Santa Maria, 6г",
+      "old_price": "",
+      "new_price": "39",
+      "brand": "Santa Maria",
+      "features": "Без сахара"
+    }
+  ],
   "basket": [
     {
-      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
-      "amount": "4",
+      "name": "Прованские травы Santa Maria, 6г",
+      "price": "39",
+      "amount": 1,
       "id": 1
     },
     {
       "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
-      "amount": "3",
+      "price": "147",
+      "amount": 5,
       "id": 2
     },
     {
       "name": "Копченая паприка Santa Maria, 230г",
-      "amount": "1",
+      "price": "449",
+      "amount": 1,
       "id": 3
     },
     {
-      "name": "Прованские травы Santa Maria, 6г",
-      "amount": "5",
+      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
+      "price": "149",
+      "amount": 1,
       "id": 4
     },
     {
-      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
-      "amount": "1",
+      "name": "Копченая паприка Santa Maria, 230г",
+      "price": "449",
+      "amount": 7,
       "id": 5
-    },
-    {
-      "name": "Прованские травы Santa Maria, 6г",
-      "amount": "8",
-      "id": 6
-    },
-    {
-      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
-      "amount": "1",
-      "id": 7
-    },
-    {
-      "name": "Прованские травы Santa Maria, 6г",
-      "amount": "7",
-      "id": 8
-    },
-    {
-      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
-      "amount": "1",
-      "id": 9
-    },
-    {
-      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
-      "amount": "6",
-      "id": 10
-    },
-    {
-      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
-      "amount": "4",
-      "id": 11
-    },
-    {
-      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
-      "amount": "1",
-      "id": 12
-    },
-    {
-      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
-      "amount": "6",
-      "id": 13
-    },
-    {
-      "name": "Прованские травы Santa Maria, 6г",
-      "amount": "5",
-      "id": 14
-    },
-    {
-      "name": "Копченая паприка Santa Maria, 230г",
-      "amount": "5",
-      "id": 15
-    },
-    {
-      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
-      "amount": "3",
-      "id": 16
-    },
-    {
-      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
-      "amount": "7",
-      "id": 17
-    },
-    {
-      "name": "Прованские травы Santa Maria, 6г",
-      "amount": "11",
-      "id": 18
-    },
-    {
-      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
-      "amount": "3",
-      "id": 19
-    },
-    {
-      "name": "Печенье бисквитное Casa Dolcini Lady Fingers, 200г",
-      "amount": "1",
-      "id": 20
-    },
-    {
-      "name": "Копченая паприка Santa Maria, 230г",
-      "amount": "5",
-      "id": 21
-    },
-    {
-      "name": "Копченая паприка Santa Maria, 230г",
-      "amount": "3",
-      "id": 22
-    },
-    {
-      "name": "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г",
-      "amount": "2",
-      "id": 23
-    },
-    {
-      "name": "Шоколад молочный Alpen Gold Max Fun, 160г",
-      "amount": "4",
-      "id": 24
     }
   ]
 }

@@ -15,4 +15,4 @@ mixin card(image, name, oldprice, newprice)
         button.card__amount-btn.card__amount-btn--decrease(type="button") -
         input(type="text" name="количество" value="1")
         button.card__amount-btn.card__amount-btn--increase(type="button") +
-      button.card__basket-btn(type="button") В корзину
+      button.card__basket-btn(type="button" v-on:click="greet") В корзину

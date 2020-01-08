@@ -10,7 +10,6 @@
     <link rel="preload" href="fonts/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Тестовое задание</title>
   </head>
@@ -50,13 +49,13 @@
                 </svg>
               </div>
               <div class="user-nav__text">Вход/Регистрация</div></a></li>
-          <li class="user-nav__item user-nav__item--basket"><a class="user-nav__link user-nav__link--basket" href="#">
+          <li class="user-nav__item user-nav__item--basket"><a class="user-nav__link user-nav__link--basket" href="#" id="basket">
               <div class="user-nav__icon">
                 <svg width="26" height="23">
                   <use xlink:href="img/sprite_auto.svg#basket-icon"></use>
                 </svg>
               </div>
-              <div class="user-nav__text">Корзина<span>0 руб.</span></div></a></li>
+              <div class="user-nav__text">Корзина<span>{{ totalPrice }} руб.</span></div></a></li>
         </ul>
       </div>
       <div class="page__menu-wrapper">
@@ -82,7 +81,7 @@
           <li><a class="breadcrumbs__link breadcrumbs__link--current" href="#">Новинки</a></li>
         </ul>
         <h2 class="page__title">Новинки продуктов</h2>
-        <div class="grid content">
+        <div class="grid content" id="content">
           <div class="col-3_md-12">
             <div class="filter">
               <div class="filter__collapsed"><span class="filter__label">Фильтры
@@ -93,10 +92,10 @@
                     <button class="filter__toggler" type="button"><span class="filter__toggler-text-open">Развернуть</span><span class="filter__toggler-text-close">Свернуть</span><span class="filter__toggler-icon"><svg width="9" height="6" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4.5 4L10 1" stroke-width="1.5"/></svg></span></button>
                   </div>
                   <div class="filter__hidden-part">
-                    <div class="filter__range"></div>
+                    <div class="filter__range" id="slider" ref="slider"></div>
                     <div class="filter__range-inputs">
-                      <input type="text" name="price_from">
-                      <input type="text" name="price_to">
+                      <input type="text" v-model="minRange" v-on:change="updateSlider">
+                      <input type="text" v-model="maxRange" v-on:change="updateSlider">
                     </div>
                   </div>
                 </div>
@@ -107,17 +106,17 @@
                   <div class="filter__hidden-part">
                     <div class="checkbox checkbox--filter">
                       <label>
-                        <input type="checkbox" name="Alpen Gold"><span>Alpen Gold (2)</span>
+                        <input type="checkbox" value="Alpen Gold" v-model="brands"><span>Alpen Gold {{ items.filter(item => item.brand === 'Alpen Gold').length }}</span>
                       </label>
                     </div>
                     <div class="checkbox checkbox--filter">
                       <label>
-                        <input type="checkbox" name="Casa Dolcini"><span>Casa Dolcini (1)</span>
+                        <input type="checkbox" value="Casa Dolcini" v-model="brands"><span>Casa Dolcini {{ items.filter(item => item.brand === 'Casa Dolcini').length }}</span>
                       </label>
                     </div>
                     <div class="checkbox checkbox--filter">
                       <label>
-                        <input type="checkbox" name="Santa Maria"><span>Santa Maria (2)</span>
+                        <input type="checkbox" value="Santa Maria" v-model="brands"><span>Santa Maria {{ items.filter(item => item.brand === 'Santa Maria').length }}</span>
                       </label>
                     </div>
                   </div>
@@ -129,19 +128,19 @@
                   <div class="filter__hidden-part">
                     <div class="checkbox checkbox--filter">
                       <label>
-                        <input type="checkbox" name="С арахисом"><span>С арахисом</span>
+                        <input type="checkbox" value="С арахисом" v-model="features"><span>С арахисом</span>
                       </label>
                     </div>
                     <div class="checkbox checkbox--filter">
                       <label>
-                        <input type="checkbox" name="Без сахара"><span>Без сахара</span>
+                        <input type="checkbox" value="Без сахара" v-model="features"><span>Без сахара</span>
                       </label>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <button class="filter__reset-btn" type="button">Сбросить</button>
+            <button class="filter__reset-btn" type="button" v-show="canResetFilter" @click="resetFilter">Сбросить</button>
           </div>
           <div class="col-9_md-12">
             <div class="catalog-sort">
@@ -164,162 +163,33 @@
                 </div>
                 <div class="checkbox sort__checkbox">
                   <label>
-                    <input type="checkbox" name="Santa Maria"><span>Цена со скидкой</span>
+                    <input type="checkbox" v-model="onlyDiscount"><span>Цена со скидкой</span>
                   </label>
                 </div>
-                <div class="sort_select sort_select--numbers"><span>Товаров на странице</span>
-                  <select id="sort_items_number">
-                    <option>6</option>
-                    <option>12</option>
-                    <option>18</option>
-                    <option>24</option>
-                  </select>
-                </div>
-                <div class="sort_select sort_select--method"><span>Сортировать по</span>
-                  <select id="sort_items_method">
-                    <option>популярности</option>
-                    <option>названию А-Я</option>
-                    <option>названию Я-А</option>
-                    <option>возрастанию цены</option>
-                    <option>убыванию цены</option>
-                  </select>
-                </div>
+                <div class="sort_select sort_select--numbers" id="amountItemsOnPage"><span>Товаров на странице</span><v-select v-model="amountOnPage" :clearable="false" :searchable="false" :options="amountOnPageOptions"></v-select></div>
+                <div class="sort_select sort_select--method"><span>Сортировать по</span><v-select v-model="sortType" :clearable="false" :searchable="false" :options="sortTypeOptions"></v-select></div>
               </div>
               <div class="grid catalog">
-                <div class="col-4_lg-6_sm-12">
-                  <div class="card">
-                    <div class="card__image"><img src="img/item_1.jpg" srcset="img/item_1@2x.jpg 2x" alt="Копченая паприка Santa Maria, 230г"/></div>
-                    <h3 class="card__title">Копченая паприка Santa Maria, 230г</h3>
-                    <div class="card__price">
-                      <div class="card__old-price">643 р.</div>
-                      <div class="card__new-price">449 р.</div>
-                    </div>
-                    <div class="card__controls">
-                      <div class="card__amount-input">
-                        <button class="card__amount-btn card__amount-btn--decrease" type="button">-</button>
-                        <input type="text" name="количество" value="1"/>
-                        <button class="card__amount-btn card__amount-btn--increase" type="button">+</button>
-                      </div>
-                      <button class="card__basket-btn" type="button">В корзину</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4_lg-6_sm-12">
-                  <div class="card">
-                    <div class="card__image"><img src="img/item_2.jpg" srcset="img/item_2@2x.jpg 2x" alt="Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г"/></div>
-                    <h3 class="card__title">Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г</h3>
-                    <div class="card__price">
-                      <div class="card__new-price">149 р.</div>
-                    </div>
-                    <div class="card__controls">
-                      <div class="card__amount-input">
-                        <button class="card__amount-btn card__amount-btn--decrease" type="button">-</button>
-                        <input type="text" name="количество" value="1"/>
-                        <button class="card__amount-btn card__amount-btn--increase" type="button">+</button>
-                      </div>
-                      <button class="card__basket-btn" type="button">В корзину</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4_lg-6_sm-12">
-                  <div class="card">
-                    <div class="card__image"><img src="img/item_3.jpg" srcset="img/item_3@2x.jpg 2x" alt="Печенье бисквитное Casa Dolcini Lady Fingers, 200г"/></div>
-                    <h3 class="card__title">Печенье бисквитное Casa Dolcini Lady Fingers, 200г</h3>
-                    <div class="card__price">
-                      <div class="card__new-price">213 р.</div>
-                    </div>
-                    <div class="card__controls">
-                      <div class="card__amount-input">
-                        <button class="card__amount-btn card__amount-btn--decrease" type="button">-</button>
-                        <input type="text" name="количество" value="1"/>
-                        <button class="card__amount-btn card__amount-btn--increase" type="button">+</button>
-                      </div>
-                      <button class="card__basket-btn" type="button">В корзину</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4_lg-6_sm-12">
-                  <div class="card">
-                    <div class="card__image"><img src="img/item_4.jpg" srcset="img/item_4@2x.jpg 2x" alt="Шоколад молочный Alpen Gold Max Fun, 160г"/></div>
-                    <h3 class="card__title">Шоколад молочный Alpen Gold Max Fun, 160г</h3>
-                    <div class="card__price">
-                      <div class="card__old-price">147 р.</div>
-                      <div class="card__new-price">120 р.</div>
-                    </div>
-                    <div class="card__controls">
-                      <div class="card__amount-input">
-                        <button class="card__amount-btn card__amount-btn--decrease" type="button">-</button>
-                        <input type="text" name="количество" value="1"/>
-                        <button class="card__amount-btn card__amount-btn--increase" type="button">+</button>
-                      </div>
-                      <button class="card__basket-btn" type="button">В корзину</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4_lg-6_sm-12">
-                  <div class="card">
-                    <div class="card__image"><img src="img/item_5.jpg" srcset="img/item_5@2x.jpg 2x" alt="Шоколад молочный Alpen Gold Max Fun, 160г"/></div>
-                    <h3 class="card__title">Шоколад молочный Alpen Gold Max Fun, 160г</h3>
-                    <div class="card__price">
-                      <div class="card__new-price">147 р.</div>
-                    </div>
-                    <div class="card__controls">
-                      <div class="card__amount-input">
-                        <button class="card__amount-btn card__amount-btn--decrease" type="button">-</button>
-                        <input type="text" name="количество" value="1"/>
-                        <button class="card__amount-btn card__amount-btn--increase" type="button">+</button>
-                      </div>
-                      <button class="card__basket-btn" type="button">В корзину</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4_lg-6_sm-12">
-                  <div class="card">
-                    <div class="card__image"><img src="img/item_6.jpg" srcset="img/item_6@2x.jpg 2x" alt="Прованские травы Santa Maria, 6г"/></div>
-                    <h3 class="card__title">Прованские травы Santa Maria, 6г</h3>
-                    <div class="card__price">
-                      <div class="card__new-price">39 р.</div>
-                    </div>
-                    <div class="card__controls">
-                      <div class="card__amount-input">
-                        <button class="card__amount-btn card__amount-btn--decrease" type="button">-</button>
-                        <input type="text" name="количество" value="1"/>
-                        <button class="card__amount-btn card__amount-btn--increase" type="button">+</button>
-                      </div>
-                      <button class="card__basket-btn" type="button">В корзину</button>
-                    </div>
-                  </div>
-                </div>
+                <product :item="item" v-for="item in filteredItems" :key="item.id"></product>
               </div>
             </div>
           </div>
           <div class="col-12 pagination">
             <ul class="pagintaion__list">
-              <li><a class="pagintaion__link pagintaion__link--prev pagintaion__link--disabled" href="#">
+              <li><a class="pagintaion__link pagintaion__link--prev" href="#" @click.prevent="previousPage" :disabled="currentPage === 0">
                   <svg width="16" height="11">
                     <use xlink:href="img/sprite_auto.svg#arrow-icon"></use>
                   </svg></a></li>
-              <li><a class="pagintaion__link pagintaion__link--active" href="#">1</a></li>
-              <li><a class="pagintaion__link" href="#">2</a></li>
-              <li><a class="pagintaion__link" href="#">3</a></li>
-              <li><a class="pagintaion__link" href="#">4</a></li>
-              <li><a class="pagintaion__link pagintaion__link--more" href="#">...</a></li>
-              <li><a class="pagintaion__link" href="#">60</a></li>
-              <li><a class="pagintaion__link pagintaion__link--next" href="#">
+              <li v-for="(page, index) in currentPaginationPages" :key="index"><a class="pagintaion__link" href="#" :class="[(page.indexPage === currentPage) ? 'pagintaion__link--active' : '' ]" @click.prevent="() =&gt; setCurrentPage(page.indexPage)">{{ page.indexPage + 1 }}</a></li>
+              <li v-if="showLastPage"><a class="pagintaion__link pagintaion__link--more" href="#">...</a></li>
+              <li v-if="showLastPage"><a class="pagintaion__link" href="#" @click.prevent="() =&gt; setCurrentPage(pages.length - 1)">{{ pages.length }}</a></li>
+              <li><a class="pagintaion__link pagintaion__link--next" href="#" @click.prevent="nextPage" :disabled="currentPage === pages.length-1">
                   <svg width="16" height="11">
                     <use xlink:href="img/sprite_auto.svg#arrow-icon"></use>
                   </svg></a></li>
             </ul>
           </div>
-          <div class="content__sort-select"><span>Сортировать по</span>
-            <select id="sort_items_method_bottom">
-              <option>популярности</option>
-              <option>названию А-Я</option>
-              <option>названию Я-А</option>
-              <option>возрастанию цены</option>
-              <option>убыванию цены</option>
-            </select>
-          </div>
+          <div class="content__sort-select"><span>Сортировать по</span><v-select v-model="sortType" :clearable="false" :searchable="false" :options="sortTypeOptions"></v-select></div>
           <div class="modal modal--basket">
             <button class="modal__close" type="button" aria-label="закрыть">Х</button>
             <p class="modal__text"></p>

@@ -1,20 +1,14 @@
 .col-12.pagination
   ul.pagintaion__list
     li
-      a(href="#").pagintaion__link.pagintaion__link--prev.pagintaion__link--disabled
+      a(href="#", @click.prevent="previousPage" :disabled="currentPage === 0").pagintaion__link.pagintaion__link--prev
         +icon-sprite("arrow-icon", 16, 11)
-    li
-      a(href="#").pagintaion__link.pagintaion__link--active 1
-    li
-      a(href="#").pagintaion__link 2
-    li
-      a(href="#").pagintaion__link 3
-    li
-      a(href="#").pagintaion__link 4
-    li
+    li(v-for="(page, index) in currentPaginationPages" :key="index")
+      a(href="#", :class="[(page.indexPage === currentPage) ? 'pagintaion__link--active' : '' ]", @click.prevent="() => setCurrentPage(page.indexPage)").pagintaion__link {{ page.indexPage + 1 }}
+    li(v-if="showLastPage")
       a(href="#").pagintaion__link.pagintaion__link--more ...
+    li(v-if="showLastPage")
+      a(href="#", @click.prevent="() => setCurrentPage(pages.length - 1)").pagintaion__link {{ pages.length }}
     li
-      a(href="#").pagintaion__link 60
-    li
-      a(href="#").pagintaion__link.pagintaion__link--next
+      a(href="#", @click.prevent="nextPage" :disabled="currentPage === pages.length-1").pagintaion__link.pagintaion__link--next
         +icon-sprite("arrow-icon", 16, 11)
