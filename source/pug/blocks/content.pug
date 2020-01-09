@@ -1,4 +1,4 @@
-.page
+.page(id="content")
   .page__header
     .page__logo
       img(src="img/logo.png", srcset="img/logo@2x.png 2x", alt="logo")
@@ -17,13 +17,13 @@
   .page__container
     include breadcrumbs.pug
     h2.page__title Новинки продуктов
-    .grid.content(id="content")
+    .grid.content
       include filter.pug
       .col-9_md-12
         .catalog-sort
           include sort.pug
           .grid.catalog
-            product(:item="item" v-for="item in filteredItems" :key="item.id")
+            product(:item="item" v-for="item in shownItems" :key="item.id")
       include pagination.pug
       .content__sort-select
           span Сортировать по
