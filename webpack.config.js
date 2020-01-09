@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: {
@@ -13,6 +14,10 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       }
     ]
   },
@@ -29,8 +34,8 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-        noUiSlider: 'nouislider',
-        customSelect: 'custom-select'
-    })
+        noUiSlider: 'nouislider'
+    }),
+    new VueLoaderPlugin()
   ]
 };

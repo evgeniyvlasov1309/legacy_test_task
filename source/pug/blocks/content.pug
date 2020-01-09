@@ -1,4 +1,4 @@
-.page
+.page(id="content")
   .page__header
     .page__logo
       img(src="img/logo.png", srcset="img/logo@2x.png 2x", alt="logo")
@@ -23,27 +23,11 @@
         .catalog-sort
           include sort.pug
           .grid.catalog
-            .col-4_lg-6_sm-12
-              +card("item_1", "Копченая паприка Santa Maria, 230г", "643 р.", "449 р.")
-            .col-4_lg-6_sm-12
-              +card("item_2", "Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г", "", "149 р.")
-            .col-4_lg-6_sm-12
-              +card("item_3", "Печенье бисквитное Casa Dolcini Lady Fingers, 200г", "", "213 р.")
-            .col-4_lg-6_sm-12
-              +card("item_4", "Шоколад молочный Alpen Gold Max Fun, 160г", "147 р.", "120 р.")
-            .col-4_lg-6_sm-12
-              +card("item_5", "Шоколад молочный Alpen Gold Max Fun, 160г", "", "147 р.")
-            .col-4_lg-6_sm-12
-              +card("item_6", "Прованские травы Santa Maria, 6г", "", "39 р.")
+            product(:item="item" v-for="item in shownItems" :key="item.id")
       include pagination.pug
       .content__sort-select
           span Сортировать по
-          select(id="sort_items_method_bottom")
-            option популярности
-            option названию А-Я
-            option названию Я-А
-            option возрастанию цены
-            option убыванию цены
+          <v-select v-model="sortType" :clearable="false" :searchable="false" :options="sortTypeOptions"></v-select>
       .modal.modal--basket
         button(type="button", aria-label="закрыть").modal__close Х
         p.modal__text

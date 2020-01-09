@@ -1,15 +1,14 @@
 import accordeon from './modules/accordeon';
-import filter from './modules/filter';
-import card from './modules/card';
-import customSelect from './modules/select';
+import content from './modules/content';
+import vSelect from './modules/select';
+import Paginate from './modules/pagination';
+import product from './modules/product';
 import basket from './modules/basket';
 
 
 
 (function () {
-  filter();
+  content();
   accordeon();
-  card();
-  customSelect();
-  basket();
+/*   basket(); */
 })();

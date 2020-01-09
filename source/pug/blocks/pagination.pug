@@ -1,20 +1,7 @@
 .col-12.pagination
-  ul.pagintaion__list
-    li
-      a(href="#").pagintaion__link.pagintaion__link--prev.pagintaion__link--disabled
-        +icon-sprite("arrow-icon", 16, 11)
-    li
-      a(href="#").pagintaion__link.pagintaion__link--active 1
-    li
-      a(href="#").pagintaion__link 2
-    li
-      a(href="#").pagintaion__link 3
-    li
-      a(href="#").pagintaion__link 4
-    li
-      a(href="#").pagintaion__link.pagintaion__link--more ...
-    li
-      a(href="#").pagintaion__link 60
-    li
-      a(href="#").pagintaion__link.pagintaion__link--next
-        +icon-sprite("arrow-icon", 16, 11)
+  paginate(v-model="currentPage"
+    :page-count="amountOfPages !== 0 ? amountOfPages : 1"
+    :page-range="pageRange"
+    :container-class="'pagination__list'"
+    :prev-text="'<svg width=\"16\" height=\"11\" viewBox=\"0 0 16 11\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M5.21928 0.16544C5.44484 -0.0551466 5.79995 -0.0551466 6.02551 0.16544C6.24345 0.378574 6.24345 0.7333 6.02551 0.945937L1.93747 4.94382L15.4275 4.94382C15.7419 4.94382 16 5.18825 16 5.49578C16 5.80331 15.7419 6.05569 15.4275 6.05569L1.93747 6.05569L6.02551 10.0461C6.24345 10.2667 6.24345 10.6219 6.02551 10.8346C5.79995 11.0551 5.44484 11.0551 5.21928 10.8346L0.163456 5.89025C-0.0544853 5.67711 -0.0544853 5.32239 0.163456 5.10975L5.21928 0.16544Z\"/></svg>'"
+    :next-text="'<svg width=\"16\" height=\"11\" viewBox=\"0 0 16 11\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M5.21928 0.16544C5.44484 -0.0551466 5.79995 -0.0551466 6.02551 0.16544C6.24345 0.378574 6.24345 0.7333 6.02551 0.945937L1.93747 4.94382L15.4275 4.94382C15.7419 4.94382 16 5.18825 16 5.49578C16 5.80331 15.7419 6.05569 15.4275 6.05569L1.93747 6.05569L6.02551 10.0461C6.24345 10.2667 6.24345 10.6219 6.02551 10.8346C5.79995 11.0551 5.44484 11.0551 5.21928 10.8346L0.163456 5.89025C-0.0544853 5.67711 -0.0544853 5.32239 0.163456 5.10975L5.21928 0.16544Z\"/></svg>'")

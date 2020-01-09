@@ -1,7 +1,7 @@
 .sort
   .sort__radio-view.sort__radio-view--tiles
     label
-      input(type="radio" name="view" value="плитка")
+      input(type="radio" name="view" value="плитка" checked)
       span(aria-label="отображать плиткой")
         +icon-sprite("tile-icon", 33, 33)
   .sort__radio-view.sort__radio-view--list
@@ -11,20 +11,11 @@
         +icon-sprite("list-icon", 24, 16)
   .checkbox.sort__checkbox
     label
-      input(type="checkbox" name="Santa Maria")
+      input(type="checkbox" v-model="onlyDiscount")
       span Цена со скидкой
-  .sort_select.sort_select--numbers
+  .sort_select.sort_select--numbers(id="amountItemsOnPage")
     span Товаров на странице
-    select(id="sort_items_number")
-      option 6
-      option 12
-      option 18
-      option 24
+    <v-select v-model="amountOnPage" :clearable="false" :searchable="false" :options="amountOnPageOptions"></v-select>
   .sort_select.sort_select--method
     span Сортировать по
-    select(id="sort_items_method")
-      option популярности
-      option названию А-Я
-      option названию Я-А
-      option возрастанию цены
-      option убыванию цены
+    <v-select v-model="sortType" :clearable="false" :searchable="false" :options="sortTypeOptions"></v-select>
