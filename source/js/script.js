@@ -10,5 +10,4 @@ import basket from './modules/basket';
 (function () {
   content();
   accordeon();
-/*   basket(); */
 })();

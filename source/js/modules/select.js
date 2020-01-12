@@ -4,5 +4,7 @@ import vSelect from 'vue-select';
 Vue.component('v-select', vSelect);
 
 export default {
-  components: {vSelect}
+  components: {
+    vSelect
+  }
 };
