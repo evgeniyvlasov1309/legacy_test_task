@@ -30,6 +30,9 @@ const product = Vue.component('product', {
           store.dispatch('getItemsInBasket');
         })
         .catch(err => openBasketModal('Не удалось добавить товар в корзину'));
+    },
+    getNumbers: function () {
+      this.amount = this.amount ? (this.amount).match(/[0-9]/g).join('') : 1;
     }
   },
   template: `
@@ -45,7 +48,7 @@ const product = Vue.component('product', {
         <div class="card__controls">
           <div class="card__amount-input">
             <button class="card__amount-btn card__amount-btn--decrease" type="button" @click="amount > 1 ? amount-- : amount">-</button>
-            <input type="text" name="количество" v-model="amount">
+            <input type="text" name="количество" @input="getNumbers" v-model="amount">
             <button class="card__amount-btn card__amount-btn--increase" type="button" @click="amount++">+</button>
           </div>
           <button class="card__basket-btn" type="button" @click="putTobasket">В корзину</button>
@@ -56,5 +59,7 @@ const product = Vue.component('product', {
 });
 
 export default {
-  components: {product}
+  components: {
+    product
+  }
 };
